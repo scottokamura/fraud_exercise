@@ -2,8 +2,6 @@
 
 This repo contains a fraud analysis exercise: predict whether a payment made to a merchant is fraudulent or not.
 
-## Problem Background
-
 ## Business Case
 Fraud operation team members at the popular BNPL company __XYZ__ noticed some suspicious payments one afternoon in the system. After some basic investigations, the member flagged some payments as potential fraud and escalated the situation to the team's data scientists.
 
@@ -16,12 +14,15 @@ The data scientist must prepare an analysis and presentation for their managers 
 ## Questions
 1. __What could you tell us about the data (for data prior to 4/28)__
     - User age is a wide range, from 16 to 70 years old, with the average user being 43.
+![consumer age distribution](./images/consumer_age.png)
     - Very large majority of users use iPhone OS (1566, 71%) to use the app
     - Over 1000 payment transactions each day (1075 and 1116)
     - Most purchases were made at 9pm (209) and 10pm (236)
+![purchases by hour](./images/purchases_by_hour.png)
     - Fewest purchases were made at 5am (18)
     - Most payments were under 10000 (most common was 2000), largest payment was 165000
     - Pretty even split of female:male users, 52:48 respectively
+![consumer gender distribution](./images/consumer_gender.png)
     - Payments that were flagged as potential fraud by operator (69 rows total)
         - All first time purchases at the respective merchant
         - All purchases from Blue Shop
@@ -34,6 +35,7 @@ The data scientist must prepare an analysis and presentation for their managers 
 2. __What features are predictive of fraud?__    
     - Device used to create the payment
         - particularly if they use a Windows NT device or not
+![devices by fraud flag](./images/device_by_fraud_flag.png)
     - Time difference between the payment timestamp and account creation timestamp
         - particularly if the payment was created before the account was created
     - Payment amount
